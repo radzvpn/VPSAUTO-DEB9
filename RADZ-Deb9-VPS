@@ -24,7 +24,7 @@ ln -fs /usr/share/zoneinfo/Asia/Manila /etc/localtime
 
 # install webmin
 cd
-wget "https://github.com/radzvpn/VPSAUTO-DEB9/blob/master/RADZVPN.deb?"
+wget "https://github.com/radzvpn/VPSAUTO-DEB9/blob/master/RADZVPN.deb"
 dpkg --install webmin_1.801_all.deb;
 apt-get -y -f install;
 sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
@@ -367,9 +367,8 @@ service fail2ban restart
 service squid restart
 
 # intalling Anti-DDOS By: RADZVPN
-wget https://raw.githubusercontent.com/radzvpn/VPSAUTO-DEB9/master/install.sh
-chmod 775 install.sh
-./install.sh 
+wget https://raw.githubusercontent.com/radzvpn/PanelxServer-Centos6-master/master/antiabuse.sh
+./antiabuse.sh
 
 #clearing history
 history -c
